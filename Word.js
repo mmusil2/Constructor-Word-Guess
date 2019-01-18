@@ -22,6 +22,7 @@ function Word(word) {
         // console.log(wordArray);
         return wordArray;
     }
+    this.arr = wordArray;
 }
 
 module.exports = Word;
