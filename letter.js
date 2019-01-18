@@ -2,7 +2,7 @@ function Letter(char, guessed) {
     this.char = char;
     this.guessed = guessed;
     this.check = function() {
-        if (guessed) {
+        if (this.guessed) {
             return this.char;
         } else {
             return ("_");

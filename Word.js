@@ -1,47 +1,58 @@
 var Letter = require("./Letter");
 
-var testword = ["e", "m", "p", "e", "r", "o", "r"];
-
-var wordArray = [];
-
-for (i=0; i < testword.length; i++) {
-    var letter = new Letter(testword[i], false);
-    wordArray.push(letter);
+function Word(word) {
+    this.word = word;
+    var wordArray = [];
+    for (i=0; i < word.length; i++) {
+        var letter = new Letter(word[i], false);
+        wordArray.push(letter);
+    }
+    // return wordArray;
+    this.wordString = function() {
+        var wordStr = "";
+        for (i=0; i < wordArray.length; i++) {
+            wordStr += wordArray[i].check();
+        }
+        return wordStr;
+    }
+    this.letterCheck = function(letter) {
+        for (i=0; i < wordArray.length; i++) {
+            wordArray[i].isCorrect(letter);
+        }
+        // console.log(wordArray);
+        return wordArray;
+    }
 }
 
-console.log(wordArray);
+module.exports = Word;
 
-function Word(wordArray) {
-    this.wordArray = wordArray;
+// var newWord = new Word("emperor");
 
-}
+// console.log(newWord);
+// console.log(newWord.wordString());
+// newWord.letterCheck("r");
+// console.log(newWord.wordString());
+// newWord.letterCheck("e");
+// console.log(newWord.wordString());
 
 
 
 
 
-function stringWord() {
 
-}
+
+
+
+
+
+
+
+
+
+
+
 
 // var first = new Letter("B", false);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // console.log(first);
 // console.log(first.check());
@@ -49,3 +60,4 @@ function stringWord() {
 // console.log(first);
 // console.log(first.isCorrect("B"));
 // console.log(first);
+// console.log(first.check());
