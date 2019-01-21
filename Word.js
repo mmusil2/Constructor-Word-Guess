@@ -12,6 +12,7 @@ function Word(word) {
         var wordStr = "";
         for (i=0; i < wordArray.length; i++) {
             wordStr += wordArray[i].check();
+            wordStr += " ";
         }
         return wordStr;
     }

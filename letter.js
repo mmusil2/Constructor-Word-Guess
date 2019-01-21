@@ -4,7 +4,16 @@ function Letter(char, guessed) {
     this.check = function() {
         if (this.guessed) {
             return this.char;
-        } else {
+        } 
+        if (this.char == " ") {
+            this.guessed = true;
+            return (" ");
+        }
+        if (this.char == "-") {
+            this.guessed = true;
+            return ("-");
+        }
+        else {
             return ("_");
         }
     }
