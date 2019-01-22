@@ -1,5 +1,6 @@
 var Word = require("./Word");
 var inquirer = require("inquirer");
+var colors = require("colors");
 
 //var wordChoices = ["iron man", "hulk", "thor", "captain america", "spider-man"];
 var wordChoices = ["IRON MAN", "HULK", "THOR", "CAPTAIN AMERICA", "SPIDER-MAN",
@@ -46,11 +47,11 @@ var guessLetter = function() {
                 var compareWord = newWord.wordString();
                 
                 if (compareWord.indexOf(answers.guess) == -1) {
-                    console.log("INCORRECT!\n");
+                    console.log("INCORRECT!".red + "\n");
                     count--;
                     console.log("You have " + count + " guesses left");
                 } else {
-                    console.log("CORRECT!\n");
+                    console.log("CORRECT!".green + "\n");
                 }
                 
                 guessLetter();
